@@ -1,7 +1,7 @@
     // app/page.tsx
     'use client';
 
-    import MainPage from '@/components/MainPage';
+    import MainPage from '@/app/components/MainPage';
 
     const HomePage = () => {
       return <MainPage />;

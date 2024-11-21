@@ -7,8 +7,8 @@ export interface Question {
   surveyId: string;
   questionType: string;
   text: string;
-  options?: string[];
-  persona?: string;
+  options: number[];
+  persona: string;
 }
 
 interface QuestionState {

@@ -3,10 +3,11 @@
 import React from 'react';
 import { Question } from '../stores/useQuestionStore';
 
+
 type QuestionInputProps = {
   question: Question;
-  value: string | number;
-  onChange: (value: string | number) => void;
+  value: number;
+  onChange: (value: number) => void;
   onFocus?: () => void;
   onBlur?: () => void;
   className?: string; 
@@ -14,9 +15,9 @@ type QuestionInputProps = {
 
 function QuestionInput({ question, value, onChange, onFocus, onBlur }: QuestionInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    onChange(e.target.value);
+    const newValue = Number(e.target.value);
+    onChange(newValue);
   };
-
   switch (question.questionType) {
     case 'likert5': {
       const options: number[] = [1, 2, 3, 4, 5];
@@ -88,7 +89,7 @@ function QuestionInput({ question, value, onChange, onFocus, onBlur }: QuestionI
     case 'text-input':
       return (
         <input
-          type="text"
+          type="number"
           value={value}
           onChange={handleChange}
           onFocus={onFocus}
@@ -101,3 +102,10 @@ function QuestionInput({ question, value, onChange, onFocus, onBlur }: QuestionI
 }
 
 export default QuestionInput;
+
+
+
+
+
+
+// 

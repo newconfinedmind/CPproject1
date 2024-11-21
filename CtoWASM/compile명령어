@@ -1,0 +1,7 @@
+emcc SurveyModule.cpp Bindings.cpp \
+    -o survey_module.js \
+    -s WASM=1 \
+    -s MODULARIZE=1 \
+    -s ENVIRONMENT=web \
+    -s EXPORT_NAME="SurveyModule" \
+    -std=c++11
